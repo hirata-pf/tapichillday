@@ -1,5 +1,12 @@
 /* 共通 */
-
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+}
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 html {
     font-size: 62.5%; /* 16px × 62.5% = 10px */
@@ -22,6 +29,7 @@ h2 {
     margin-bottom: 3rem;
     font-family: "Zen Old Mincho", serif;
     font-weight: 900;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 23px rgba(255, 255, 255, 1);
 }
 
 /* カルーセル */
@@ -96,7 +104,8 @@ h1 {
     top: 6rem;
     right: 34%m;
     color: #666;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     opacity: 0;
     animation: slideGuide 2.5s ease-in-out infinite, feedIn 2s ease-out forwards;
     animation-delay: 3.5s, 4.5s;
@@ -163,6 +172,8 @@ h1 {
         padding: 0 2rem;
         .Prologue {
             font-size: 1.8rem;
+            line-height: 2.2;
+            font-family: "Zen Old Mincho", serif;
         }
     }
 }
@@ -188,10 +199,33 @@ h1 {
     }
     .CarouselThree_wrapper {
         padding: 0 2rem;
-        .Prologue {
-            font-size: 1.8rem;
+        ul {
+            li {
+                p {
+                    font-size: 1.8rem;
+                    line-height: 1.8;
+                    font-family: "Zen Old Mincho", serif;
+                }
+            }
         }
     }
+}
+.pop-up-image {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 200px;
+    z-index: 5;
+    transform: translate(100%, 100%);
+    animation: nyuAnimation 5s ease-in-out infinite;
+    animation-delay: 2s;
+}
+@keyframes nyuAnimation {
+    0% { transform: translate(100%, 100%);}
+    10% { transform: translate(0, 0);}
+    40% { transform: translate(0, 0);}
+    50% { transform: translate(100%, 100%);}
+    100% { transform: translate(100%, 100%);}
 }
 
 /* セクション4 */
@@ -215,8 +249,14 @@ h1 {
     }
     .CarouselFour_wrapper {
         padding: 0 2rem;
-        .Prologue {
-            font-size: 1.8rem;
+        ul {
+            li {
+                p {
+                    font-size: 1.8rem;
+                    line-height: 1.8;
+                    font-family: "Zen Old Mincho", serif;
+                }
+            }
         }
     }
 }
@@ -287,5 +327,28 @@ section.CarouselFive {
     }
     100% {
         opacity: 0;
+    }
+}
+.thanks-message {
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 46vh;
+    white-space: nowrap;
+    color: #fff;
+    opacity: .3;
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+}
+
+.Syugen {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-family: "Zen Old Mincho", serif;
+    margin-bottom: 1rem;
+    span {
+        font-weight: 900;
     }
 }
