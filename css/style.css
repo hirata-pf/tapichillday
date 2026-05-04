@@ -342,13 +342,37 @@ section.CarouselFive {
     font-family: "Zen Old Mincho", serif;
     font-weight: 900;
 }
+/* 追加セクション言霊 */
+.CarouselSix {
+    position: relative;
+    overflow: hidden;
+    /* background-color: #fff; */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/image05.png');
+        background-repeat: no-repeat;
+        background-position: -238px -126px;
+        transform: scale(1);
+        z-index: -1;
+        opacity: .3;
+    }
+    .CarouselSix_wrapper {
+        padding: 0 2rem;
+    }
+}
 
 .Syugen {
     font-size: 1.8rem;
     line-height: 1.8;
     font-family: "Zen Old Mincho", serif;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     span {
         font-weight: 900;
     }
 }
+
