@@ -1,0 +1,291 @@
+/* 共通 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
+html {
+    font-size: 62.5%; /* 16px × 62.5% = 10px */
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 1rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+h2 {
+    margin-top: 3rem;
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+}
+
+/* カルーセル */
+.Carousel_Container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    inline-size: 100vw;
+    block-size: 100vh;
+    scroll-behavior: smooth;
+}
+section {
+    flex: 0 0 100vw;
+    block-size: 100vh;
+    scroll-snap-align: start;
+}
+.Carousel_Container::-webkit-scrollbar {
+    display: none;
+}
+.Carousel_Container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* セクション１ */
+.CarouselOne {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/image01.jpg');
+        background-repeat: no-repeat;
+        background-position: -58px 25px;
+        transform: scale(1.2);
+        z-index: 1;
+        opacity: 0;
+        animation: feedInbackground 2s ease-in forwards;
+        animation-delay: 1.5s;
+    }
+}
+.CarouselOne_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    block-size: 100vh;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: feedIn 2s ease-out forwards;
+    animation-delay: .5s;
+}
+h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 900;
+    margin-bottom: 14rem;
+    font-size: 4.2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 23px rgba(255, 255, 255, 1);
+    span {
+        font-size: 2rem;
+    }
+}
+.Scroll_Guide {
+    display: flex;
+    position: absolute;
+    top: 6rem;
+    right: 34%m;
+    color: #666;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: slideGuide 2.5s ease-in-out infinite, feedIn 2s ease-out forwards;
+    animation-delay: 3.5s, 4.5s;
+    Arrow {
+        font-size: 1.8rem;
+        line-height: 1;
+        margin-top: .5rem;
+    }
+}
+@keyframes feedIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes feedInbackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .3;
+    }
+}
+@keyframes slideGuide {
+    0% {
+        transform: translateX(-1.5rem);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(1.5rem);
+        opacity: 0;
+    }
+}
+/* セクション２ */
+.CarouselTwo {
+    position: relative;
+    overflow: hidden;
+    /* background-color: #fff; */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/image02.jpg');
+        background-repeat: no-repeat;
+        background-position: -186px 137px;
+        transform: scale(1.8);
+        z-index: -1;
+        opacity: .3;
+    }
+    .CarouselTwo_wrapper {
+        padding: 0 2rem;
+        .Prologue {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* セクション３ */
+.CarouselThree {
+    position: relative;
+    overflow: hidden;
+    /* background-color: #fff; */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/image03.jpg');
+        background-repeat: no-repeat;
+        background-position: -181px 50px;
+        transform: scale(1.2);
+        z-index: -1;
+        opacity: .3;
+    }
+    .CarouselThree_wrapper {
+        padding: 0 2rem;
+        .Prologue {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* セクション4 */
+.CarouselFour {
+    position: relative;
+    overflow: hidden;
+    /* background-color: #fff; */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/image04.jpg');
+        background-repeat: no-repeat;
+        background-position: -35px 151px;
+        transform: scale(1.8);
+        z-index: -1;
+        opacity: .3;
+    }
+    .CarouselFour_wrapper {
+        padding: 0 2rem;
+        .Prologue {
+            font-size: 1.8rem;
+        }
+    }
+}
+/* セクション５ */
+section.CarouselFive {
+    padding: 0;
+}
+.CarouselFive_wrapper {
+    position: relative;
+    inline-size: 100vw;
+    block-size: 100vh;
+}
+.Slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: sledeShowAnim 30s linear infinite;
+}
+.slide:nth-child(1){
+    animation-delay: 0s;
+}
+.slide:nth-child(2){
+    animation-delay: 3s;
+}
+.slide:nth-child(3){
+    animation-delay: 6s;
+}
+.slide:nth-child(4){
+    animation-delay: 9s;
+}
+.slide:nth-child(5){
+    animation-delay: 12s;
+}
+.slide:nth-child(6){
+    animation-delay: 15s;
+}
+.slide:nth-child(7){
+    animation-delay: 18s;
+}
+.slide:nth-child(8){
+    animation-delay: 21s;
+}
+.slide:nth-child(9){
+    animation-delay: 24s;
+}
+.slide:nth-child(10){
+    animation-delay: 27s;
+}
+@keyframes sledeShowAnim {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+    }
+    41% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
